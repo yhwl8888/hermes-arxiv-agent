@@ -29,7 +29,7 @@ OUTPUT_JSON = BASE_DIR / "new_papers.json"   # 输出给 hermes agent 的中间�
 
 # arxiv API 配置
 ARXIV_API = "https://export.arxiv.org/api/query"
-MAX_RESULTS = 20
+MAX_RESULTS = 50
 REQUEST_INTERVAL = 3  # 秒
 
 # ==================== 工具函数 ====================
