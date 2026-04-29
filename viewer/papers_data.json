@@ -1,10 +1,52 @@
 {
-  "count": 53,
+  "count": 56,
   "crawled_date_min": "2026-04-24",
-  "crawled_date_max": "2026-04-25",
+  "crawled_date_max": "2026-04-29",
   "published_date_min": "2026-03-30",
-  "published_date_max": "2026-04-23",
+  "published_date_max": "2026-04-27",
   "papers": [
+    {
+      "arxiv_id": "2604.24273",
+      "title": "BitRL: Reinforcement Learning with 1-bit Quantized Language Models for Resource-Constrained Edge Deployment",
+      "authors": "Md. Ashiq Ul Islam Sajid, Mohammad Sakib Mahmood, Md. Tareq Hasan, Md Abdur Rahim, Rafat Ara, Md. Arafat Hossain",
+      "affiliations": "State University; Prime University; German University; Jahangirnagar University; Department of Computer Science Department of Computer Science Department of Computer Science; Department of Computer Science; Department of Information Technology Jahangirnagar University Dhaka",
+      "published_date": "2026-04-27",
+      "categories": "cs.LG",
+      "abstract": "The deployment of intelligent reinforcement learning (RL) agents on resource-constrained edge devices remains a fundamental challenge due to the substantial memory, computational, and energy requirements of modern deep learning systems. While large language models (LLMs) have emerged as powerful architectures for decision-making agents, their multi-billion parameter scale confines them to cloud-based deployment, raising concerns about latency, privacy, and connectivity dependence.   We introduce BitRL, a framework for building RL agents using 1-bit quantized language models that enables practical on-device learning and inference under severe resource constraints. Leveraging the BitNet b1.58 architecture with ternary weights (-1, 0, +1) and an optimized inference stack, BitRL achieves 10-16x memory reduction and 3-5x energy efficiency improvements over full-precision baselines while maintaining 85-98 percent of task performance across benchmarks.   We provide theoretical analysis of quantization as structured parameter perturbation, derive convergence bounds for quantized policy gradients under frozen-backbone architectures, and identify the exploration-stability trade-off in extreme quantization. Our framework systematically integrates 1-bit quantized language models with reinforcement learning for edge deployment and demonstrates effectiveness on commodity hardware.",
+      "summary_cn": "该研究聚焦于量化语言模型强化学习边缘部署领域，开发了基于1位量化语言模型的强化学习框架，在资源受限的边缘设备上实现高效部署。该方法在性能、效率和实用性方面均展现出显著优势，为相关领域提供了重要参考。",
+      "pdf_filename": "2604.24273.pdf",
+      "crawled_date": "2026-04-29",
+      "notes": "",
+      "pdf_url": "https://arxiv.org/pdf/2604.24273"
+    },
+    {
+      "arxiv_id": "2604.24008",
+      "title": "Coverage-Based Calibration for Post-Training Quantization via Weighted Set Cover over Outlier Channels",
+      "authors": "Ibne Farabi Shihab, Sanjeda Akter, Anuj Sharma",
+      "affiliations": "未找到单位信息",
+      "published_date": "2026-04-27",
+      "categories": "cs.LG",
+      "abstract": "Post-Training Quantization (PTQ) compresses large language models to low bit-widths using a small calibration set, and its quality depends strongly on which samples are chosen. We identify a failure mode in which calibration samples fail to activate outlier channels, hidden dimensions with unusually large activations, causing the quantizer to underestimate their dynamic range and producing per-channel reconstruction errors that dominate layer-wise loss. Motivated by this observation, we argue that PTQ calibration quality is governed more by weighted outlier-channel coverage than by generic sample representativeness, and formulate calibration selection as a weighted set cover problem over outlier channels. The objective is monotone submodular, and the greedy algorithm, COVERCAL, operates on pre-computed activation statistics and requires no GPU time at selection. We further show that the weight choice is internally consistent: under a stylized clipping model, missed weighted coverage upper-bounds surrogate loss, justifying the weighted coverage objective as principled rather than purely empirical. Across LLaMA-2, LLaMA-3, and Mistral, under AWQ and GPTQ backends and five downstream evaluations, COVERCAL improves over random, max-perplexity, max-activation-variance, and stratified baselines, with the largest gains at small calibration budgets. At INT4 with 128 samples, COVERCAL improves MMLU by 1.2 to 1.5 points over random calibration and reduces perplexity degradation by 15 to 30\\%; with 64 samples, it matches or exceeds random calibration at 256. The contribution is not a new PTQ backend but a formulation of calibration selection as weighted outlier coverage, with a simple, efficient algorithm and a surrogate-based justification.",
+      "summary_cn": "该研究聚焦于量化语言模型校准领域，提出基于加权集合覆盖的校准方法，针对异常通道进行覆盖优化，显著提升后训练量化质量。该方法在性能、效率和实用性方面均展现出显著优势，为相关领域提供了重要参考。",
+      "pdf_filename": "2604.24008.pdf",
+      "crawled_date": "2026-04-29",
+      "notes": "",
+      "pdf_url": "https://arxiv.org/pdf/2604.24008"
+    },
+    {
+      "arxiv_id": "2604.23801",
+      "title": "Domain Fine-Tuning vs. Retrieval-Augmented Generation for Medical Multiple-Choice Question Answering: A Controlled Comparison at the 4B-Parameter Scale",
+      "authors": "Avi-ad Avraam Buskila",
+      "affiliations": "Ilan University; Department of Information Science and Applied Artificial Intelligence",
+      "published_date": "2026-04-26",
+      "categories": "cs.CL, cs.IR",
+      "abstract": "Practitioners deploying small open-weight large language models (LLMs) for medical question answering face a recurring design choice: invest in a domain-fine-tuned model, or keep a general-purpose model and inject domain knowledge at inference time via retrieval-augmented generation (RAG). We isolate this trade-off by holding model size, prompt template, decoding temperature, retrieval pipeline, and evaluation protocol fixed, and varying only (i) whether the model has been domain-adapted (Gemma 3 4B vs. MedGemma 4B, both 4-bit quantized and served via Ollama) and (ii) whether retrieved passages from a medical knowledge corpus are inserted into the prompt. We evaluate all four cells of this 2x2 design on the full MedQA-USMLE 4-option test split (1,273 questions) with three repetitions per question (15,276 LLM calls). Domain fine-tuning yields a +6.8 percentage-point gain in majority-vote accuracy over the general 4B baseline (53.3% vs. 46.4%, McNemar p < 10^-4). RAG over MedMCQA explanations does not produce a statistically significant gain in either model, and in the domain-tuned model the point estimate is slightly negative (-1.9 pp, p = 0.16). At this scale and on this benchmark, domain knowledge encoded in weights dominates domain knowledge supplied in context. We release the full experiment code and JSONL traces to support replication.",
+      "summary_cn": "该研究聚焦于语言模型医疗边缘部署领域，通过对比领域微调与检索增强生成在医疗问答任务中的表现，发现领域知识编码到模型权重中比在推理时注入更为有效。该方法在性能、效率和实用性方面均展现出显著优势，为相关领域提供了重要参考。",
+      "pdf_filename": "2604.23801.pdf",
+      "crawled_date": "2026-04-29",
+      "notes": "",
+      "pdf_url": "https://arxiv.org/pdf/2604.23801"
+    },
     {
       "arxiv_id": "2604.21649",
       "title": "GS-Quant: Granular Semantic and Generative Structural Quantization for Knowledge Graph Completion",
@@ -202,7 +244,7 @@
       "pdf_url": "https://arxiv.org/pdf/2604.17041"
     },
     {
-      "arxiv_id": "2604.16940",
+      "arxiv_id": "2604.1694",
       "title": "D-QRELO: Training- and Data-Free Delta Compression for Large Language Models via Quantization and Residual Low-Rank Approximation",
       "authors": "Junlin Li, Shuangyong Song, Guodong Du, Ngai Wong, Xuebo Liu, Yongxiang Li, Min Zhang, Jing Li, Xuelong Li",
       "affiliations": "未找到单位信息",
@@ -213,7 +255,7 @@
       "pdf_filename": "2604.16940.pdf",
       "crawled_date": "2026-04-24",
       "notes": "",
-      "pdf_url": "https://arxiv.org/pdf/2604.16940"
+      "pdf_url": "https://arxiv.org/pdf/2604.1694"
     },
     {
       "arxiv_id": "2604.15794",
@@ -272,7 +314,7 @@
       "pdf_url": "https://arxiv.org/pdf/2604.13806"
     },
     {
-      "arxiv_id": "2604.13440",
+      "arxiv_id": "2604.1344",
       "title": "A KL Lens on Quantization: Fast, Forward-Only Sensitivity for Mixed-Precision SSM-Transformer Models",
       "authors": "Jason Kong, Nilesh Prasad Pandey, Flavio Ponzina, Tajana Rosing",
       "affiliations": "未找到单位信息",
@@ -283,7 +325,7 @@
       "pdf_filename": "2604.13440.pdf",
       "crawled_date": "2026-04-24",
       "notes": "",
-      "pdf_url": "https://arxiv.org/pdf/2604.13440"
+      "pdf_url": "https://arxiv.org/pdf/2604.1344"
     },
     {
       "arxiv_id": "2604.12782",
@@ -300,7 +342,7 @@
       "pdf_url": "https://arxiv.org/pdf/2604.12782"
     },
     {
-      "arxiv_id": "2604.18610",
+      "arxiv_id": "2604.1861",
       "title": "SpikeMLLM: Spike-based Multimodal Large Language Models via Modality-Specific Temporal Scales and Temporal Compression",
       "authors": "Han Xu, Zhiyong Qin, Di Shang, Jiahong Zhang, Xuerui Qiu, Bo Lei, Tiejun Huang, Bo Xu, Guoqi Li",
       "affiliations": "未找到单位信息",
@@ -311,7 +353,7 @@
       "pdf_filename": "2604.18610.pdf",
       "crawled_date": "2026-04-24",
       "notes": "",
-      "pdf_url": "https://arxiv.org/pdf/2604.18610"
+      "pdf_url": "https://arxiv.org/pdf/2604.1861"
     },
     {
       "arxiv_id": "2604.11655",
@@ -342,7 +384,7 @@
       "pdf_url": "https://arxiv.org/pdf/2604.11465"
     },
     {
-      "arxiv_id": "2604.11080",
+      "arxiv_id": "2604.1108",
       "title": "ReSpinQuant: Efficient Layer-Wise LLM Quantization via Subspace Residual Rotation Approximation",
       "authors": "Suyoung Kim, Sunghyun Wee, Hyeonjin Kim, Kyomin Hwang, Hyunho Lee, Nojun Kwak",
       "affiliations": "未找到单位信息",
@@ -353,7 +395,7 @@
       "pdf_filename": "2604.11080.pdf",
       "crawled_date": "2026-04-24",
       "notes": "",
-      "pdf_url": "https://arxiv.org/pdf/2604.11080"
+      "pdf_url": "https://arxiv.org/pdf/2604.1108"
     },
     {
       "arxiv_id": "2604.10496",
@@ -398,7 +440,7 @@
       "pdf_url": "https://arxiv.org/pdf/2604.10091"
     },
     {
-      "arxiv_id": "2604.09970",
+      "arxiv_id": "2604.0997",
       "title": "LoDAdaC: a unified local training-based decentralized framework with adaptive gradients and compressed communication",
       "authors": "Wei Liu, Anweshit Panda, Ujwal Pandey, Haven Cook, George M. Slota, Naigang Wang, Jie Chen, Yangyang Xu",
       "affiliations": "未找到单位信息",
@@ -409,7 +451,7 @@
       "pdf_filename": "2604.09970.pdf",
       "crawled_date": "2026-04-24",
       "notes": "",
-      "pdf_url": "https://arxiv.org/pdf/2604.09970"
+      "pdf_url": "https://arxiv.org/pdf/2604.0997"
     },
     {
       "arxiv_id": "2604.09512",
@@ -622,7 +664,7 @@
       "pdf_url": "https://arxiv.org/pdf/2604.02816"
     },
     {
-      "arxiv_id": "2604.19790",
+      "arxiv_id": "2604.1979",
       "title": "Hidden Reliability Risks in Large Language Models: Systematic Identification of Precision-Induced Output Disagreements",
       "authors": "Yifei Wang, Tianlin Li, Xiaohan Zhang, Xiaoyu Zhang, Wei Ma, Mingfei Cheng, Li Pan",
       "affiliations": "未找到单位信息",
@@ -633,7 +675,7 @@
       "pdf_filename": "2604.19790.pdf",
       "crawled_date": "2026-04-24",
       "notes": "",
-      "pdf_url": "https://arxiv.org/pdf/2604.19790"
+      "pdf_url": "https://arxiv.org/pdf/2604.1979"
     },
     {
       "arxiv_id": "2604.02556",
