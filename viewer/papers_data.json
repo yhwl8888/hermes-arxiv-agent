@@ -1,8 +1,8 @@
 {
-  "count": 56,
-  "crawled_date_min": "2026-04-24",
+  "count": 62,
+  "crawled_date_min": "2025-05-05",
   "crawled_date_max": "2026-04-29",
-  "published_date_min": "2026-03-30",
+  "published_date_min": "2025-05-05",
   "published_date_max": "2026-04-27",
   "papers": [
     {
@@ -788,6 +788,90 @@
       "crawled_date": "2026-04-24",
       "notes": "",
       "pdf_url": "https://arxiv.org/pdf/2603.28765"
+    },
+    {
+      "arxiv_id": "2605.00539",
+      "title": "AGoQ: Activation and Gradient Quantization for Memory-Efficient Distributed Training of LLMs",
+      "authors": "Wenxiang Lin, Juntao Huang, Luhan Zhang, Laili Li, Xiang Bao, Mengyang Zhang, Bing Wang, Shaohuai Shi",
+      "affiliations": "Harbin Institute of Technology, Shenzhen; Huawei Technologies",
+      "published_date": "2025-05-05",
+      "categories": "cs.LG, cs.CL",
+      "abstract": "Quantization is a key method for reducing the GPU memory requirement of training large language models (LLMs). Yet, current approaches are ineffective for 4-bit activations and 8-bit gradients, which would easily cause slow convergence or accuracy loss. To address this, we introduce AGoQ, incorporating two new techniques: 1) a layer-aware activation quantization algorithm that allocates appropriate bit-widths for activations of various layers based on their types and pipeline stages to achieve near 4-bit activation storage, and 2) a gradient quantization algorithm that reduces memory usage and shortens communication time by employing 8-bit gradient storage and precision-preserving 8-bit All-Reduce communication.",
+      "summary_cn": "提出AGoQ框架，通过层感知激活量化算法根据层类型和流水线阶段分配位宽实现近4位激活存储，以及8位梯度量化配合精度保持的All-Reduce通信，在8B至32B LLaMA模型上最高减少52%内存、提升1.34倍训练速度。",
+      "pdf_filename": "2605.00539.pdf",
+      "crawled_date": "2025-05-05",
+      "notes": "",
+      "pdf_url": "https://arxiv.org/pdf/2605.00539"
+    },
+    {
+      "arxiv_id": "2605.00519",
+      "title": "Silicon Showdown: Performance, Efficiency, and Ecosystem Barriers in Consumer-Grade LLM Inference",
+      "authors": "Abdurrahman Javat, Allan Kazakov",
+      "affiliations": "Bahcesehir University",
+      "published_date": "2025-05-05",
+      "categories": "cs.CL, cs.AR",
+      "abstract": "The operational landscape of local Large Language Model (LLM) inference has shifted from lightweight models to datacenter-class weights exceeding 70B parameters, creating profound system challenges for consumer hardware. This paper presents a systematic empirical analysis of the Nvidia and Apple Silicon ecosystems, specifically characterizing the distinct intra-architecture trade-offs required to deploy these massive models.",
+      "summary_cn": "系统对比Nvidia和Apple Silicon消费级硬件上的LLM推理表现。Nvidia Blackwell架构的NVFP4量化达1.6倍吞吐提升但存在VRAM墙问题；Apple统一内存架构可线性扩展80B参数模型，能效比Nvidia高出23倍。",
+      "pdf_filename": "2605.00519.pdf",
+      "crawled_date": "2025-05-05",
+      "notes": "",
+      "pdf_url": "https://arxiv.org/pdf/2605.00519"
+    },
+    {
+      "arxiv_id": "2605.00422",
+      "title": "BWLA: Breaking the Barrier of W1AX Post-Training Quantization for LLMs",
+      "authors": "Zhixiong Zhao, Zukang Xu, Dawei Yang",
+      "affiliations": "HoumoAI",
+      "published_date": "2025-05-05",
+      "categories": "cs.LG, cs.CL",
+      "abstract": "Large language models (LLMs) have driven major progress in NLP, yet their substantial memory and compute demands still hinder practical deployment. Binarization can compress weights to 1 bit, fundamentally lowering compute and bandwidth costs. However, existing methods cannot address activation heavy tails and thus must keep activations in high precision, preventing true end-to-end acceleration.",
+      "summary_cn": "提出BWLA框架，首次实现1位权重量化与低比特激活的联合后训练量化。正交Kronecker变换将单峰权重转为双峰并抑制激活长尾，近端SVD投影进行低秩细化。在Qwen3-32B上困惑度11.92，推理加速3.26倍。",
+      "pdf_filename": "2605.00422.pdf",
+      "crawled_date": "2025-05-05",
+      "notes": "",
+      "pdf_url": "https://arxiv.org/pdf/2605.00422"
+    },
+    {
+      "arxiv_id": "2605.00421",
+      "title": "RadLite: Multi-Task LoRA Fine-Tuning of Small Language Models for CPU-Deployable Radiology AI",
+      "authors": "Pankaj Gupta, Kartik Bose",
+      "affiliations": "Postgraduate Institute of Medical Education and Research, Chandigarh",
+      "published_date": "2025-05-05",
+      "categories": "cs.CL, cs.AI",
+      "abstract": "Large language models (LLMs) show promise in radiology but their deployment is limited by computational requirements that preclude use in resource-constrained clinical environments. We investigate whether small language models (SLMs) of 3-4 billion parameters can achieve strong multi-task radiology performance through LoRA fine-tuning, enabling deployment on consumer-grade CPUs.",
+      "summary_cn": "研究3-4B参数小语言模型通过LoRA微调实现多任务放射科AI。训练覆盖9个放射学任务，LoRA微调后RADS准确率提升53%、NLI提升60%，量化后可在消费级CPU上以4-8 tokens/s运行。",
+      "pdf_filename": "2605.00421.pdf",
+      "crawled_date": "2025-05-05",
+      "notes": "",
+      "pdf_url": "https://arxiv.org/pdf/2605.00421"
+    },
+    {
+      "arxiv_id": "2605.00320",
+      "title": "VitaLLM: A Versatile and Tiny Accelerator for Mixed-Precision LLM Inference on Edge Devices",
+      "authors": "Zi-Wei Lin, Tian-Sheuan Chang",
+      "affiliations": "National Yang Ming Chiao Tung University",
+      "published_date": "2025-05-05",
+      "categories": "cs.AR, cs.LG",
+      "abstract": "We present VitaLLM, a mixed-precision accelerator that enables ternary-weight large language models to run efficiently on edge devices. The design combines two compute cores - a multiplier-free TINT core for ternary-INT projections and a BoothFlex core that reuses a radix-4 Booth datapath for both INT8xINT8 attention and ternary-INT.",
+      "summary_cn": "提出VitaLLM混合精度加速器，使三元权重大模型在边缘设备高效运行。集成无乘法TINT核心和复用Booth数据通路的BoothFlex核心，预测稀疏注意力减少KV读取。16nm硅原型实现72 tokens/s解码速度。",
+      "pdf_filename": "2605.00320.pdf",
+      "crawled_date": "2025-05-05",
+      "notes": "",
+      "pdf_url": "https://arxiv.org/pdf/2605.00320"
+    },
+    {
+      "arxiv_id": "2605.00257",
+      "title": "Retrieval-Augmented Reasoning for Chartered Accountancy",
+      "authors": "Jatin Gupta, Akhil Sharma, Saransh Singhania, Ali Imam Abidi",
+      "affiliations": "Sharda University, Greater Noida",
+      "published_date": "2025-05-05",
+      "categories": "cs.CL, cs.AI",
+      "abstract": "The inception of Large Language Models (LLMs) has catalyzed AI adoption in the finance sector, yet their reliability in complex, jurisdiction-specific tasks like Indian Chartered Accountancy (CA) remains limited. We present CA-ThinkFlow as a parameter-efficient Retrieval-Augmented Generation (RAG) framework which operates with a 14B, 4-bit-quantized reasoning model.",
+      "summary_cn": "提出CA-ThinkFlow框架，基于14B参数4位量化DeepSeek-R1推理模型，针对印度特许会计师领域构建参数高效RAG系统。在CA-Bench基准上学术可靠性系数达到GPT-4o的68.75%。",
+      "pdf_filename": "2605.00257.pdf",
+      "crawled_date": "2025-05-05",
+      "notes": "",
+      "pdf_url": "https://arxiv.org/pdf/2605.00257"
     }
   ]
 }
