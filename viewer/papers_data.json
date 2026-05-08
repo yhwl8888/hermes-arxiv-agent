@@ -1,10 +1,38 @@
 {
-  "count": 62,
+  "count": 64,
   "crawled_date_min": "2025-05-05",
-  "crawled_date_max": "2026-04-29",
+  "crawled_date_max": "2026-05-08",
   "published_date_min": "2025-05-05",
-  "published_date_max": "2026-04-27",
+  "published_date_max": "2026-05-06",
   "papers": [
+    {
+      "arxiv_id": "2605.04738",
+      "title": "OSAQ: Outlier Self-Absorption for Accurate Low-bit LLM Quantization",
+      "authors": "Zhikai Li, Zhen Dong, Xuewen Liu, Jing Zhang, Qingyi Gu",
+      "affiliations": "Institute of Automation, Chinese Academy of Sciences; University of California, Santa Barbara",
+      "published_date": "2026-05-06",
+      "categories": "cs.LG",
+      "abstract": "Large Language Models (LLMs) have demonstrated remarkable capabilities. However, their massive parameter scale leads to significant resource consumption and latency during inference. Post-training weight-only quantization offers a promising solution by reducing model size and accelerating token generation through alleviating the memory-bound issue. Nevertheless, the presence of inherent systematic outliers in weights continues to be a major obstacle. While existing methods, such as scaling and rotation, attempt to address this issue, the performance remains unsatisfactory. In this paper, we propose Outlier Self-Absorption Quantization (OSAQ), which performs additive weight suppression guided by the second-order low-rank property for low-bit weight-only quantization of LLMs.",
+      "summary_cn": "OSAQ提出异常值自吸收量化方法，利用Hessian矩阵在不同输入下的低秩一致性，识别稳定零空间并通过线性组合构建加法权重变换抑制异常值。该方法采用闭式解实现，无需训练或迭代，不引入推理开销。在2-bit量化中结合GPTQ可将困惑度降低40%以上。",
+      "pdf_filename": "2605.04738.pdf",
+      "crawled_date": "2026-05-08",
+      "notes": "",
+      "pdf_url": "https://arxiv.org/pdf/2605.04738"
+    },
+    {
+      "arxiv_id": "2605.04084",
+      "title": "FASQ: Flexible Accelerated Subspace Quantization for Calibration-Free LLM Compression",
+      "authors": "Ye Qiao, Yian Wang, Zhiheng Chen, Hyoukjun Kwon, Sitao Huang",
+      "affiliations": "University of California, Irvine",
+      "published_date": "2026-04-22",
+      "categories": "cs.LG, cs.AI, cs.AR",
+      "abstract": "Compressing large language models (LLMs) for deployment on commodity GPUs remains challenging: conventional scalar quantization is limited to fixed bit-widths (e.g., 8/4/3-bit), offers only a few discrete compression points, and typically requires calibration data. We present FASQ (Flexible Accelerated Subspace Quantization), a calibration-free framework that applies product quantization to LLM weight matrices.",
+      "summary_cn": "FASQ提出灵活加速子空间量化，一种免校准的产品量化框架，通过调节子向量大小和码本基数实现27%-49%的连续压缩空间，填补固定位宽方案无法覆盖的压缩间隙。在Llama-3-8B上以37%-42%模型大小超越4-bit GPTQ和AWQ。定制CUDA内核在RTX 3090上实现有效4-bit解码45.2 tok/s，超越FP16基线，是唯一在解码加速上超过FP16的压缩方法。",
+      "pdf_filename": "2605.04084.pdf",
+      "crawled_date": "2026-05-08",
+      "notes": "",
+      "pdf_url": "https://arxiv.org/pdf/2605.04084"
+    },
     {
       "arxiv_id": "2604.24273",
       "title": "BitRL: Reinforcement Learning with 1-bit Quantized Language Models for Resource-Constrained Edge Deployment",
